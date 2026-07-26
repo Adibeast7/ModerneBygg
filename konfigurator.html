@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Konfigurator — ModerneBygg Modulbygg & Containere</title>
   <meta name="description" content="Konfigurer din modulløsning steg for steg — velg produkt, tilvalg og send forespørsel." />
-  <link rel="icon" type="image/png" href="img/logo/favicon.png" />
+  <link rel="icon" type="image/svg+xml" href="img/logo/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -58,6 +58,8 @@
       color: var(--primary); letter-spacing: -.02em;
     }
     .logo span { color: var(--accent); }
+    .logo-svg { display: flex; align-items: center; line-height: 1; }
+    .logo-svg img { height: 48px; width: auto; display: block; }
     .nav-back {
       display: flex; align-items: center; gap: .45rem;
       font-size: .85rem; font-weight: 500; color: var(--muted);
@@ -542,7 +544,7 @@
 
   <nav class="navbar" id="navbar">
     <a href="index.html" class="logo-svg">
-      <img src="img/logo/modernebygg-logo-light.png" alt="ModerneBygg — Modulbygg og containere, Vestlandet">
+      <img src="img/logo/modernebygg-square-light.svg" alt="ModerneBygg — Modulbygg og containere, Vestlandet">
     </a>
     <a href="produkter.html" class="nav-back">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
