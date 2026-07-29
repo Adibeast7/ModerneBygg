@@ -502,6 +502,8 @@ img { display: block; max-width: 100%; }
 }
 .product-card:active { transform: scale(.99); box-shadow: none; }
 .product-card.featured { grid-row: 1 / 3; }
+[data-href] { cursor: pointer; }
+[data-href] a, [data-href] button { cursor: pointer; }
 
 .product-img {
   width: calc(100% + 4rem);
