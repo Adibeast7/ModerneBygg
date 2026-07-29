@@ -136,6 +136,7 @@
                 <option value="lagringscontainer">Lagringscontainer (6'/8'/10'/20')</option>
                 <option value="kontormodul">Kontormodul 20'</option>
                 <option value="sanitarmodul">Sanitærmodul 20'</option>
+                <option value="formannshybel">Formannshybel 20'</option>
                 <option value="rigg-pakke">Komplett rigg-pakke</option>
                 <option value="skreddersydd">Skreddersydd løsning</option>
               </select>
@@ -199,6 +200,27 @@
 
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
+
+    // Pre-fill from ?produkt=Produktnavn (linked from product pages' "Få tilbud" button)
+    const produktParam = new URLSearchParams(window.location.search).get('produkt');
+    if (produktParam) {
+      const categoryMap = [
+        [/lagringscontainer/i, 'lagringscontainer'],
+        [/formannshybel/i, 'formannshybel'],
+        [/kontormodul/i, 'kontormodul'],
+        [/sanitær|sanitar/i, 'sanitarmodul'],
+        [/rigg/i, 'rigg-pakke'],
+        [/skreddersydd/i, 'skreddersydd'],
+      ];
+      const match = categoryMap.find(([re]) => re.test(produktParam));
+      if (match) {
+        const select = document.getElementById('produkt');
+        select.value = match[1];
+      }
+      const textarea = document.getElementById('melding');
+      textarea.value = `Interessert i: ${produktParam}\n\n`;
+    }
+
     contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
       const btn = contactForm.querySelector('.btn-submit');

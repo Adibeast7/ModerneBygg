@@ -1,6 +1,7 @@
 (function () {
   const container = document.getElementById('hero-slider');
   if (!container) return;
+  const thumbsWrap = document.getElementById('hero-thumbs');
   const folder = container.dataset.folder;
   const maxProbe = 12;
   const images = [];
@@ -35,6 +36,16 @@
       container.querySelector('.prev').addEventListener('click', () => move(-1));
       container.querySelector('.next').addEventListener('click', () => move(1));
       container.querySelectorAll('.slider-dot').forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+      if (thumbsWrap) {
+        thumbsWrap.innerHTML = images.map((n, i) =>
+          `<button class="thumb-btn ${i === 0 ? 'active' : ''}" aria-label="Bilde ${i + 1}"><img src="${folder}/${n}.jpg" alt="" loading="lazy"></button>`
+        ).join('');
+        thumbsWrap.querySelectorAll('.thumb-btn').forEach((btn, i) => btn.addEventListener('click', () => goTo(i)));
+        thumbsWrap.style.display = '';
+      }
+    } else if (thumbsWrap) {
+      thumbsWrap.style.display = 'none';
     }
   }
 
@@ -42,6 +53,9 @@
     current = i;
     container.querySelectorAll('img').forEach((img, idx) => img.classList.toggle('active', idx === current));
     container.querySelectorAll('.slider-dot').forEach((dot, idx) => dot.classList.toggle('active', idx === current));
+    if (thumbsWrap) {
+      thumbsWrap.querySelectorAll('.thumb-btn').forEach((btn, idx) => btn.classList.toggle('active', idx === current));
+    }
   }
 
   function move(delta) {
