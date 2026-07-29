@@ -3,7 +3,7 @@
   if (!container) return;
   const thumbsWrap = document.getElementById('hero-thumbs');
   const folder = container.dataset.folder;
-  const maxProbe = 12;
+  const maxProbe = 30;
   const images = [];
   let current = 0;
 
