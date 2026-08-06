@@ -21,6 +21,7 @@
         <div class="nav-dropdown">
           <a href="produkter.html#kontormoduler">Kontormoduler</a>
           <a href="produkter.html#lagringscontainere">Lagringscontainere</a>
+          <a href="produkter.html#brukte-containere">Brukte containere</a>
         </div>
       </li>
       <li><a href="om-oss.html">Hvorfor oss</a></li>
@@ -35,6 +36,7 @@
     <a href="produkter.html">Produkter</a>
     <a href="produkter.html#kontormoduler" class="mobile-submenu">Kontormoduler</a>
     <a href="produkter.html#lagringscontainere" class="mobile-submenu">Lagringscontainere</a>
+    <a href="produkter.html#brukte-containere" class="mobile-submenu">Brukte containere</a>
     <a href="om-oss.html">Hvorfor oss</a>
     <a href="konfigurator.html">Konfigurator</a>
     <a href="kontakt.html">Få tilbud →</a>
@@ -139,6 +141,7 @@
                 <option value="sanitarmodul">Sanitærmodul 20'</option>
                 <option value="formannshybel">Formannshybel 20'</option>
                 <option value="rigg-pakke">Komplett rigg-pakke</option>
+                <option value="brukt-container">Brukt shipping container (BoxNor)</option>
                 <option value="skreddersydd">Skreddersydd løsning</option>
               </select>
             </div>
@@ -206,6 +209,7 @@
     const produktParam = new URLSearchParams(window.location.search).get('produkt');
     if (produktParam) {
       const categoryMap = [
+        [/one way used|brukt.*container|brukt.*shipping/i, 'brukt-container'],
         [/lagringscontainer/i, 'lagringscontainer'],
         [/formannshybel/i, 'formannshybel'],
         [/kontormodul/i, 'kontormodul'],

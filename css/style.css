@@ -444,6 +444,36 @@ img { display: block; max-width: 100%; }
 }
 .frakt-banner span { font-size: .8rem; color: #7B4A2D; line-height: 1.55; }
 
+/* Frakt policy box — two-line summary of shipping terms across product lines */
+.frakt-policy-box {
+  background: #F7F3EF; border: 1px solid #DDD0C4;
+  border-radius: 10px; padding: 1.1rem 1.3rem;
+  margin-bottom: 3rem;
+  display: flex; flex-direction: column; gap: .65rem;
+}
+.frakt-policy-row { display: flex; align-items: flex-start; gap: .7rem; }
+.frakt-policy-row svg { width: 17px; height: 17px; color: #7B4A2D; flex-shrink: 0; margin-top: .15rem; }
+.frakt-policy-row p { font-size: .82rem; color: #5f3820; line-height: 1.6; }
+.frakt-policy-row strong { color: #5f3820; }
+
+/* Amber warning — used for "frakt ikke inkludert" on used-container products */
+.frakt-warning-box {
+  display: flex; align-items: flex-start; gap: .85rem;
+  background: #FFF7E6; border: 1px solid #F0CE86;
+  border-radius: 10px; padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
+}
+.frakt-warning-box svg { width: 22px; height: 22px; color: #92650A; flex-shrink: 0; margin-top: .1rem; }
+.frakt-warning-box strong { display: block; font-size: .85rem; font-weight: 700; color: #7A5308; margin-bottom: .15rem; }
+.frakt-warning-box p { font-size: .82rem; color: #92650A; line-height: 1.6; }
+
+.category-note {
+  font-size: .8rem; font-weight: 600; color: #92650A;
+  background: #FFF7E6; border: 1px solid #F0CE86;
+  border-radius: 7px; padding: .55rem .9rem;
+  display: inline-block; margin-top: .75rem;
+}
+
 /* ─── TILVALG GRID ──────────────────────────────────────────────────────── */
 .tilvalg-grid {
   display: grid;
